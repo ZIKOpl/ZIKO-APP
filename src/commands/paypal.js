@@ -17,6 +17,6 @@ module.exports = {
       return interaction.reply(`❌ Tu n'as pas encore enregistré ton PayPal. Fais \`/setpaypal\`.`);
     }
 
-    await interaction.reply(`\`${users[userId].paypal}\``);
+  await interaction.reply(`\`\`\`${users[userId].paypal}\`\`\``);
   }
 };
