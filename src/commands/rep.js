@@ -40,7 +40,7 @@ module.exports = {
     const prix = interaction.options.getNumber('prix');
     const paiement = interaction.options.getString('paiement');
 
-    const message = `+rep <@${vendeur.id}> x${quantite} ${item} ${prix}€ via ${paiement}`;
+    const message = ```+rep <@${vendeur.id}> x${quantite} ${item} ${prix}€ via ${paiement}```;
 
     await interaction.reply({ content: message });
   }
