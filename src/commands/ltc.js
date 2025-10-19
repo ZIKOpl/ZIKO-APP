@@ -9,8 +9,16 @@ module.exports = {
 
   async execute(interaction) {
     const filePath = path.join(__dirname, '../database/users.json');
-    const rawData = fs.readFileSync(filePath, 'utf8');
-    const users = JSON.parse(rawData);
+
+    // Sécuriser la lecture du fichier
+    let users = {};
+    try {
+      const rawData = fs.readFileSync(filePath, 'utf8');
+      users = JSON.parse(rawData);
+    } catch (err) {
+      console.error('Erreur de lecture du fichier users.json :', err);
+      return interaction.reply('❌ Erreur interne : impossible de lire la base de données.');
+    }
 
     const userId = interaction.user.id;
     if (!users[userId] || !users[userId].ltc) {
