@@ -17,6 +17,6 @@ module.exports = {
       return interaction.reply(`❌ Tu n'as pas encore enregistré ton LTC. Fais \`/setltc\`.`);
     }
 
-    await interaction.reply(`\`\`\`${users[userId].ltc}\`\`\``);
+    await interaction.reply(`\`${users[userId].ltc}`\``);
   }
 };
